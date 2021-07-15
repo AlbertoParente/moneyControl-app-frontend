@@ -5,17 +5,19 @@ import ValueBox from '../common/widget/valueBox'
 import Row from '../common/layout/row'
 class Dashboard extends Component {
     render() {
+
+        const { credit, debt } = this.props.summary
         return (
             <div>
                 <ContentHeader title="Dashboard" small="Version 1.0" />
                 <Content>
                     <Row>
                         <ValueBox cols="12 4" color="green" icon="bank"
-                            value="R$ 10" text="Total Credits" />
+                            value={`R$ ${credit}`} text="Total Credits" />
                         <ValueBox cols="12 4" color="red" icon="credit-card"
-                            value="R$ 10" text="Total Credits" />
+                            value={`R$ ${debt}`} text="Total Credits" />
                         <ValueBox cols="12 4" color="blue" icon="money"
-                            value="R$ 0" text="Consolidated Value" />
+                            value={`R$ ${credit - debt}`} text="Consolidated Value" />
                     </Row>
                 </Content>
             </div>
@@ -23,4 +25,5 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard
+const mapStateToProps = state => ({ summary: state.dashboard.summary })
+export default connect(mapStateToProps)(Dashboard)
