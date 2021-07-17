@@ -9,6 +9,10 @@ import Row from '../common/layout/row'
 class Dashboard extends Component {
     render() {
 
+        componentWillMount() {
+            this.props.getSummary()
+        }
+
         const { credit, debt } = this.props.summary
         return (
             <div>
@@ -30,4 +34,4 @@ class Dashboard extends Component {
 
 const mapStateToProps = state => ({ summary: state.dashboard.summary })
 const mapDispatchToProps = dispatc => bindActionCreators({ getSummary }, dispatc)
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
