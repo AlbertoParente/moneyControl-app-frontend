@@ -9,6 +9,16 @@ class BillingCycleList extends Component {
         this.props.getList()
     }
 
+    renderRows() {
+        return List.map(bc => (
+            <tr key={bc._id}>
+                <td>{bc.name}</td>
+                <td>{bc.month}</td>
+                <td>{bc.year}</td>
+            </tr>
+        ))
+    }
+
     reder() {
         return (
             <div>
@@ -20,6 +30,9 @@ class BillingCycleList extends Component {
                             <th>Year</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {this.renderRows()}
+                    </tbody>
                 </table>
             </div>
         )
