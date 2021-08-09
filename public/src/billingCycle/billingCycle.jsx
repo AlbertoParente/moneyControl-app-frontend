@@ -37,45 +37,18 @@ class BillingCycle extends Component {
                                 <List />
                             </TabContent>
                             <TabContent id='tabCreate'>
-                                <Form onSubmit={this.props.create} />
+                                <Form onSubmit={this.props.create} submitLabel='Include' submitClass="primary" />
                             </TabContent>
                             <TabContent id='tabUpdate'>
-                                <Form onSubmit={this.props.update} />
+                                <Form onSubmit={this.props.update} submitLabel='Alter' submitClass="info" />
                             </TabContent>
                             <TabContent id='tabDelete'>
-                                <Form onSubmit={this.props.remove} readOnly={true} />
+                                <Form onSubmit={this.props.remove} readOnly={true} submitLabel='Delete' submitClass="danger" />
                             </TabContent>
                         </TabsContent>
                     </Tabs>
                 </Content>
             </div>
-            <div>
-            <ContentHeader title="Payment Cycles" small="Register" />
-            <Content>
-                <Tabs>
-                    <TabsHeader>
-                        <TabHeader label="List" icon="bars" target="tabList" />
-                        <TabHeader label="Add" icon="plus" target="tabCreate" />
-                        <TabHeader label="Alter" icon="pencil" target="tabUpdate" />
-                        <TabHeader label="Delete" icon="trash-o" target="tabDelete" />
-                    </TabsHeader>
-                    <TabsContent>
-                        <TabContent id="tabList">
-                            <List />
-                        </TabContent>
-                        <TabContent id='tabCreate'>
-                            <Form onSubmit={this.props.create} />
-                        </TabContent>
-                        <TabContent id='tabUpdate'>
-                            <Form onSubmit={this.props.update} />
-                        </TabContent>
-                        <TabContent id='tabDelete'>
-                            <Form onSubmit={this.props.remove} readOnly={true} />
-                        </TabContent>
-                    </TabsContent>
-                </Tabs>
-            </Content>
-        </div>
         )
     }
 }
