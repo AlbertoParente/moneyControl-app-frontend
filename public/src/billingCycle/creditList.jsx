@@ -4,16 +4,19 @@ import Grid from '../common/layout/grid'
 import Input from '../common/form/input'
 
 class CreditList extends Component {
+
     renderRows() {
-        return (
-            <tr>
-                <td><Field name="credits[0].name" component={input}
+        const list = this.props.list || []
+        return list.map((item, index) => {
+            <tr key={index}>
+                <td><Field name={`credits[${index}].name`} component={input}
                     placeholder="Enter the name" readOnly={this.props.readOnly}></Field></td>
-                <td><Field name="credits[0].value" component={input}
+                <td><Field name={`credits[${index}].value`} component={input}
                     placeholder="Enter the value" readOnly={this.props.readOnly}></Field></td>
                 <td></td>
             </tr>
-        )
+
+        })
     }
 
     render() {
