@@ -23,6 +23,7 @@ class BillingCycleList extends Component {
                         <i className="fa fa-trash-o"></i>
                     </button>
                 </td>
+                
             </tr>
         ))
     }
