@@ -8,7 +8,5 @@ export default props => (
         <MenuTree label="Register" icon="edit">
             <MenuItem path="billingCycles" label="Cycles to the Payment" icon="usd" />
         </MenuTree>
-
-
     </ul>
 )
