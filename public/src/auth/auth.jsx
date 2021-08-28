@@ -30,7 +30,36 @@ class Auth extends Component {
         const { handleSubmit } = this.props
 
         return (
-
+            <div className="login-box">
+                <div className="login-logo"><b> My</b> Money</div>
+                <div className="login-box-body">
+                    <p className="login-box-msg">Welcome!</p>
+                    <form onSubmit={handleSubmit(v => this.onSubmit(v))}>
+                        <Field component={Input} type="input" name="name"
+                            placeholder="Name" icon='user' hide={loginMode} />
+                        <Field component={Input} type="email" name="email"
+                            placeholder="E-mail" icon='envelope' />
+                        <Field component={Input} type="password" name="password"
+                            placeholder="Password" icon='lock' />
+                        <Field component={Input} type="password" name="confirm_password"
+                            placeholder="Confirm Password" icon='lock' hide={loginMode} />
+                        <Row>
+                            <Grid cols="4">
+                                <button type="submit"
+                                    className="btn btn-primary btn-block btn-flat">
+                                    {loginMode ? 'Enter' : 'Register'}
+                                </button>
+                            </Grid>
+                        </Row>
+                    </form>
+                    <br />
+                    <a onClick={() => this.changeMode()}>
+                        {loginMode ? 'New User? Register here!' :
+                            'Already registered? Come in here!'}
+                    </a>
+                </div>
+                <Messages />
+            </div>
         )
     }
 }
