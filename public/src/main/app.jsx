@@ -1,5 +1,4 @@
 import React from 'react'
-import '../common/template/dependencies'
 import Header from '../common/template/header'
 import SideBar from '../common/template/SideBar'
 import Footer from '../common/template/footer'
