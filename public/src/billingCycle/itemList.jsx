@@ -6,7 +6,6 @@ import Grid from '../common/layout/grid'
 import Input from '../common/form/input'
 import If from '../common/operator/if'
 
-
 class ItemList extends Component {
 
     add(index, item = {}) {
@@ -48,7 +47,6 @@ class ItemList extends Component {
                     </button>
                 </td>
             </tr>
-
         })
     }
 

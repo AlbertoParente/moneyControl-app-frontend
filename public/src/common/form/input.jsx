@@ -7,5 +7,3 @@ export default props => (
         readOnly={props.readOnly}
         type={props.type} />
 )
-
-

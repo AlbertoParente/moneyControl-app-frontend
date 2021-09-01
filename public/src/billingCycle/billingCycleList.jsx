@@ -23,7 +23,7 @@ class BillingCycleList extends Component {
                         <i className="fa fa-trash-o"></i>
                     </button>
                 </td>
-                
+
             </tr>
         ))
     }
@@ -48,6 +48,6 @@ class BillingCycleList extends Component {
     }
 }
 
-const mapStateToProps = state => ({list: state.billingCycle.list})
+const mapStateToProps = state => ({ list: state.billingCycle.list })
 const mapDispatchToProps = dispatch => bindActionCreators({ getList, showUpdate, showDelete }, dispatch)
 export default BillingCycleList

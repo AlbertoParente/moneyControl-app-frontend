@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'TOKE_VALIDATED':
-            if(action.payload) {
+            if (action.payload) {
                 return { ...state, validToken: true }
             } else {
                 localStorage.removeItem(userKey)

@@ -5,4 +5,3 @@ export default props => (
         {props.children}
     </div>
 )
-

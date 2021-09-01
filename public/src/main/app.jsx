@@ -9,7 +9,7 @@ export default props => (
         <Header />
         <SideBar />
         <div className="content-wrapper">
-           { props.children }
+            {props.children}
         </div>
         <Footer />
         <Messages />
