@@ -8,19 +8,20 @@ import Row from '../common/layout/row'
 const BASE_URL = 'http://localhost:3003/api'
 
 export default class Dashboard2 extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { credit: 0, debit: 0 }
+    }
+
+    componentWillMount() {
+        axios.get(`${BASE_URL}/billingCycles/summary`)
+            .then(resp => this.setState(resp.data))
+    }
+
     render() {
-
-        constructor(props) {
-            super(props)
-            this.state = { credit: 0, debit: 0 }
-        }
-
-        componentWillMount() {
-            axios.get(`${BASE_URL}/billingCycles/summary`)
-                .then(resp => this.setState(resp.data))
-        }
-
         const { credit, debt } = this.props.summary
+
         return (
             <div>
                 <ContentHeader title="Dashboard" small="Version 2.0" />
