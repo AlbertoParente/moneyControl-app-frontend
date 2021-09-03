@@ -7,13 +7,14 @@ import Content from '../common/template/content'
 import ValueBox from '../common/widget/valueBox'
 import Row from '../common/layout/row'
 class Dashboard extends Component {
+
+    componentWillMount() {
+        this.props.getSummary()
+    }
+
     render() {
-
-        componentWillMount() {
-            this.props.getSummary()
-        }
-
         const { credit, debt } = this.props.summary
+
         return (
             <div>
                 <ContentHeader title="Dashboard" small="Version 1.0" />

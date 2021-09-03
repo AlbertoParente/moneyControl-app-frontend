@@ -65,4 +65,3 @@ class Auth extends Component {
 Auth = reduxForm({ form: 'authForm' })(Auth)
 const mapDispatchToProps = dispatch => bindActionCreators({ login, signup }, dispatch)
 export default connect(null, mapDispatchToProps)(Auth)
-
